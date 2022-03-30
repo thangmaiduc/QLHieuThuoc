@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">QL Hieu Thuoc</string>
+    <string name="username">Tên người dùng</string>
+    <string name="password">Mật khẩu</string>
+    <string name="cfpassword">Xác nhận lại mật khẩu</string>
+    <string name="email">Email</string>
+    <string name="login">Đăng nhập</string>
+    <string name="save">Lưu</string>
+    <string name="signup">Đăng kí</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="edit">Chỉnh sửa</string>
+    <string name="delete">Xóa</string>
+    <string name="saveInfo">Lưu thông tin đăng nhập</string>
+    <string name="Info">Thông tin đăng nhập</string>
+    <string name="saveLogin">Duy trì đăng nhập</string>
+    <string name="account">Tài Khoản</string>
+    <string name="hoadon">Xem Hóa Đơn</string>
+    <string name="tkcthd">Thống kê chi tiết hóa đơn</string>
+    <string name="thuoc">Quản Lý Thuốc</string>
+    <string name="hieuthuoc">Quản Lý Hiệu Thuốc</string>
+    <string name="nologin">Nếu bạn chưa có tài khoản</string>
+</resources>
