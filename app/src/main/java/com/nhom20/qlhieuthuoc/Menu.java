@@ -26,7 +26,7 @@ public class Menu extends AppCompatActivity {
 
         editor.putBoolean("saveLogin", false);
         editor.commit();
-        Intent intent = new Intent(Menu.this, TaiKhoan.class);
+        Intent intent = new Intent(Menu.this, Login.class);
         startActivity(intent);
     }
     public void chuyenHieuThuoc(View view) {
@@ -35,15 +35,15 @@ public class Menu extends AppCompatActivity {
     }
 
     public void chuyenThuoc(View view) {
-        Intent intent = new Intent(Menu.this, HieuThuoc.class);
+        Intent intent = new Intent(Menu.this, Thuoc.class);
         startActivity(intent);
     }
     public void chuyenHoaDon(View view) {
-        Intent intent = new Intent(Menu.this, HieuThuoc.class);
+        Intent intent = new Intent(Menu.this, HoaDon.class);
         startActivity(intent);
     }
     public void chuyenCTHD(View view) {
-        Intent intent = new Intent(Menu.this, HieuThuoc.class);
+        Intent intent = new Intent(Menu.this, CTHoaDon.class);
         startActivity(intent);
     }
 

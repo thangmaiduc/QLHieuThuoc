@@ -17,25 +17,28 @@
     <Button
         android:onClick="chuyenHoaDon"
         android:id="@+id/btnHoaDon"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/hoadon" /><Button
-    android:onClick="chuyenCTHD"
+        android:text="@string/hoadon" />
+
+    <Button
         android:id="@+id/btnCTHoaDon"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/tkcthd" /><Button
+        android:onClick="chuyenCTHD"
+        android:text="@string/tkcthd" />
+    <Button
         android:id="@+id/btnThuoc"
         android:onClick="chuyenThuoc"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/thuoc" />
     <Button
         android:id="@+id/btnHieuThuoc"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:onClick="chuyenHieuThuoc"
         android:layout_gravity="center"
@@ -43,7 +46,7 @@
          /><Button
         android:id="@+id/btnTaiKhoan"
         android:onClick="chuyenTaiKhoan"
-        android:layout_width="wrap_content"
+            android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/account" />
@@ -51,7 +54,7 @@
     <Button
         android:id="@+id/btnLogout"
         android:onClick="logOut"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/logout"
