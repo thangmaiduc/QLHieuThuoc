@@ -24,7 +24,7 @@ public class Login extends AppCompatActivity {
     EditText edtUsername, edtPassword;
     Button btnLogin;
     TextView tvSignup ;
-    String DATABASE_NAME = "DBHIEUTHUOC.db";
+    public static String DATABASE_NAME = "DBHIEUTHUOC.db";
     String DB_PATH_SUFFIX = "/databases/";
     public static String nameShare = "thongtindangnhap";
     CheckBox chkSave, chkLogin ;
@@ -60,13 +60,20 @@ public class Login extends AppCompatActivity {
                 SharedPreferences.Editor editor = preferences.edit();
 
                 editor.putBoolean("saveLogin", chkLogin.isChecked());
+                editor.putString("email", cursor.getString(1));
                 editor.commit();
+                cursor.close();
                 Toast.makeText(Login.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Login.this, Menu.class);
                 startActivity(intent);
             }else {
                 Toast.makeText(this, "Đăng nhập thất bại, sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
             }
+
+        }
+        else {
+            Toast.makeText(this, "Vui lòng nhập thông tin",Toast.LENGTH_SHORT).show();
+            return;
         }
     }
 

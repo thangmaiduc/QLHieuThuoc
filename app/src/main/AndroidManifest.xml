@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QLHieuThuoc">
         <activity
+            android:name=".ThemNhaThuoc"
+            android:exported="false" />
+        <activity
             android:name=".ThemHieuThuoc"
             android:exported="false" />
         <activity

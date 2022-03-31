@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical">
     tools:context=".HieuThuoc">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/imageButton"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:foregroundGravity="left"
+            android:onClick="handBack"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/back" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_weight="5"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/hieu_thuoc" />
+
+        <ImageView
+            android:id="@+id/imageButton2"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:foregroundGravity="left"
+            android:onClick="handAdd"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/add" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lvHieuThuoc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

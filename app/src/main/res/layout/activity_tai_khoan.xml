@@ -20,7 +20,7 @@
             android:layout_weight="1"
             android:foregroundGravity="left"
             android:scaleType="fitStart"
-            app:srcCompat="@drawable/quay_ve" />
+            app:srcCompat="@drawable/back" />
         <ImageView
             android:id="@+id/imageView2"
             android:layout_weight="5"
@@ -41,7 +41,26 @@
         android:layout_marginBottom="20dp"
         android:textColor="@color/purple_700"
         tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="87dp" /><TextView
+        tools:layout_editor_absoluteY="87dp" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/username"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="87dp" />
+
+    <EditText
+        android:id="@+id/edtUsername"
+        android:inputType="none"
+        android:textIsSelectable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+
+
+        />
+    <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,22 +75,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         />
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/username"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="87dp" />
 
-    <EditText
-        android:id="@+id/edtUsername"
-        android:editable="false"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        />
 
     <TextView
         android:id="@+id/textView2"
@@ -89,7 +93,7 @@
         android:ems="10"
         android:inputType="textPassword" />
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnSaveInfoAccount"
         android:onClick="handleSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

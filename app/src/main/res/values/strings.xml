@@ -6,7 +6,13 @@
     <string name="email">Email</string>
     <string name="login">Đăng nhập</string>
     <string name="save">Lưu</string>
+    <string name="add">Thêm mới</string>
+    <string name="continueInput">Nhập tiếp</string>
+    <string name="saveSuccess">Lưu thành công</string>
+    <string name="saveFail">Lưu thất bại</string>
     <string name="signup">Đăng kí</string>
+    <string name="address">Địa chỉ</string>
+    <string name="nameNT">Tên nhà thuốc</string>
     <string name="logout">Đăng xuất</string>
     <string name="edit">Chỉnh sửa</string>
     <string name="delete">Xóa</string>

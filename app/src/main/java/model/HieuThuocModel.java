@@ -39,4 +39,9 @@ public class HieuThuocModel {
         this.tenNT = tenNT;
         this.diaChi = diaChi;
     }
+
+    @Override
+    public String toString() {
+        return this.maNT+"\t\t"+this.tenNT+"\n"+this.diaChi;
+    }
 }
