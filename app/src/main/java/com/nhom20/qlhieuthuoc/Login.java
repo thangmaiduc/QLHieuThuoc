@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        processCopy();
+
         addControls();
         addEvents();
 
@@ -128,7 +128,12 @@ public class Login extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        processCopy();
 
+    }
 
     @Override
     protected void onPause() {
@@ -144,6 +149,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
         SharedPreferences preferences = getSharedPreferences(nameShare , MODE_PRIVATE);
         String user = preferences.getString("username","");
         String password = preferences.getString("password","");
