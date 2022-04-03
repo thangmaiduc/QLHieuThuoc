@@ -15,11 +15,11 @@
         android:src="@drawable/hieu_thuoc" />
 
     <Button
-        android:onClick="chuyenHoaDon"
         android:id="@+id/btnHoaDon"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:onClick="chuyenHoaDon"
         android:text="@string/hoadon" />
 
     <Button
@@ -43,7 +43,8 @@
         android:onClick="chuyenHieuThuoc"
         android:layout_gravity="center"
         android:text="@string/hieuthuoc"
-         /><Button
+         />
+    <Button
         android:id="@+id/btnTaiKhoan"
         android:onClick="chuyenTaiKhoan"
             android:layout_width="270dp"

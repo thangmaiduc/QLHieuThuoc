@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QLHieuThuoc">
         <activity
+            android:name=".ThemHoaDon"
+            android:exported="false" />
+        <activity
+            android:name=".ShowHoaDon"
+            android:exported="false" />
+        <activity
+            android:name=".HoaDon"
+            android:exported="false" />
+        <activity
+            android:name=".hoa_don"
+            android:exported="false" />
+        <activity
             android:name=".activity_thuoc"
             android:exported="true">
             <intent-filter>
@@ -18,11 +30,10 @@
         </activity>
         <activity
             android:name=".ThemNhaThuoc"
-            android:exported="false" >
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".ThemHieuThuoc"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

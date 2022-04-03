@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HoaDon">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:onClick="handBack"
+            android:id="@+id/imageButton"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:foregroundGravity="left"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/back" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_weight="5"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/hieu_thuoc" />
+        <ImageView
+            android:id="@+id/imageButton2"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:foregroundGravity="left"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/add"
+            android:onClick="handAdd"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hoadon"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/purple_700"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="87dp" />
+
+    <Spinner
+        android:id="@+id/chiNhanh"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:spinnerMode="dropdown" />
+
+    <EditText
+        android:id="@+id/maHoaDon"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:hint="Mã hóa đơn"
+        />
+    <Button
+        android:id="@+id/timKiem"
+        android:layout_marginTop="40dp"
+        android:onClick="timKiemHoaDon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Tìm kiếm" />
+
+</LinearLayout>
