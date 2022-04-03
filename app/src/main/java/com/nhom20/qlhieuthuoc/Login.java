@@ -23,11 +23,11 @@ import java.io.OutputStream;
 public class Login extends AppCompatActivity {
     EditText edtUsername, edtPassword;
     Button btnLogin;
-    TextView tvSignup ;
+    TextView tvSignup;
     public static String DATABASE_NAME = "DBHIEUTHUOC.db";
     String DB_PATH_SUFFIX = "/databases/";
     public static String nameShare = "thongtindangnhap";
-    CheckBox chkSave, chkLogin ;
+    CheckBox chkSave, chkLogin;
     public static SQLiteDatabase database = null;
 
 
@@ -38,7 +38,6 @@ public class Login extends AppCompatActivity {
 
         addControls();
         addEvents();
-
     }
 
     private void addEvents() {
@@ -51,12 +50,12 @@ public class Login extends AppCompatActivity {
     }
 
     private void handleLogin() {
-        if(edtUsername.getText().length() > 0 && edtPassword.getText().length() > 0 ){
-            database= openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
+        if (edtUsername.getText().length() > 0 && edtPassword.getText().length() > 0) {
+            database = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
             Cursor cursor = database.query("USER", null, "USERNAME =? and PASSWORD =?",
                     new String[]{edtUsername.getText().toString(), edtPassword.getText().toString()}, null, null, null);
-            if(cursor.moveToNext()){
-                SharedPreferences preferences = getSharedPreferences(nameShare , MODE_PRIVATE);
+            if (cursor.moveToNext()) {
+                SharedPreferences preferences = getSharedPreferences(nameShare, MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
 
                 editor.putBoolean("saveLogin", chkLogin.isChecked());
@@ -66,13 +65,11 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(Login.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Login.this, Menu.class);
                 startActivity(intent);
-            }else {
+            } else {
                 Toast.makeText(this, "Đăng nhập thất bại, sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
             }
-
-        }
-        else {
-            Toast.makeText(this, "Vui lòng nhập thông tin",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Vui lòng nhập thông tin", Toast.LENGTH_SHORT).show();
             return;
         }
     }
@@ -87,43 +84,46 @@ public class Login extends AppCompatActivity {
     }
 
     public void handleSignup(View view) {
-        Intent signUpView = new Intent(Login.this, SignUpActivity.class);
-        
-        startActivity(signUpView);
+        Intent intent = new Intent(this, SignUpActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
+        startActivity(intent);
+        this.finish();
     }
-    private void processCopy(){
+
+    private void processCopy() {
         try {
             File dbFile = getDatabasePath(DATABASE_NAME);
-            if(!dbFile.exists()){
+            if (!dbFile.exists()) {
                 copyDatabaseFromAssets();
-                Toast.makeText(Login.this,"Copy database thành công", Toast.LENGTH_LONG ).show();
-                
+                Toast.makeText(Login.this, "Copy database thành công", Toast.LENGTH_LONG).show();
+
             }
-        }catch (Exception ex){
+        } catch (Exception ex) {
             Log.e("Loi", ex.toString());
         }
     }
-    private String getDatabasePath(){
-        return getApplicationInfo().dataDir+DB_PATH_SUFFIX+DATABASE_NAME;
+
+    private String getDatabasePath() {
+        return getApplicationInfo().dataDir + DB_PATH_SUFFIX + DATABASE_NAME;
     }
+
     private void copyDatabaseFromAssets() {
         try {
-            InputStream myInput =getAssets().open(DATABASE_NAME);
-            String outFileName =getDatabasePath();
-            File f = new File(getApplicationInfo().dataDir+DB_PATH_SUFFIX);
-            if(!f.exists()) f.mkdir();
+            InputStream myInput = getAssets().open(DATABASE_NAME);
+            String outFileName = getDatabasePath();
+            File f = new File(getApplicationInfo().dataDir + DB_PATH_SUFFIX);
+            if (!f.exists()) f.mkdir();
             OutputStream myOutput = new FileOutputStream(outFileName);
-            byte [] buffer = new byte[1024];
+            byte[] buffer = new byte[1024];
             int length;
-            while ((length= myInput.read(buffer))>0){
-                myOutput.write(buffer,0,length);
+            while ((length = myInput.read(buffer)) > 0) {
+                myOutput.write(buffer, 0, length);
             }
             myOutput.flush();
             myOutput.close();
             myInput.close();
 
-        }
-        catch (Exception ex){
+        } catch (Exception ex) {
             Log.e("Loi", ex.toString());
         }
     }
@@ -138,7 +138,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        SharedPreferences preferences = getSharedPreferences(nameShare , MODE_PRIVATE);
+        SharedPreferences preferences = getSharedPreferences(nameShare, MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("username", edtUsername.getText().toString());
         editor.putString("password", edtPassword.getText().toString());
@@ -150,20 +150,18 @@ public class Login extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        SharedPreferences preferences = getSharedPreferences(nameShare , MODE_PRIVATE);
-        String user = preferences.getString("username","");
-        String password = preferences.getString("password","");
-        Boolean save = preferences.getBoolean("save",false);
-        Boolean saveLogin = preferences.getBoolean("saveLogin",false);
-        if(saveLogin){
+        SharedPreferences preferences = getSharedPreferences(nameShare, MODE_PRIVATE);
+        String user = preferences.getString("username", "");
+        String password = preferences.getString("password", "");
+        Boolean save = preferences.getBoolean("save", false);
+        Boolean saveLogin = preferences.getBoolean("saveLogin", false);
+        if (saveLogin) {
             Intent intent = new Intent(Login.this, Menu.class);
             startActivity(intent);
-
         }
-        if(save){
+        if (save) {
             edtUsername.setText(user);
             edtPassword.setText(password);
-
         }
         chkSave.setChecked(save);
     }
