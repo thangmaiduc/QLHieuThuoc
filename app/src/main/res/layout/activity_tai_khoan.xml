@@ -6,99 +6,75 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".TaiKhoan">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp">
 
         <ImageView
-            android:onClick="handBack"
             android:id="@+id/imageButton"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_weight="1"
-            android:foregroundGravity="left"
-            android:scaleType="fitStart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:onClick="handBack"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/back" />
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_weight="5"
-            android:layout_width="50dp"
-            android:layout_height="70dp"
 
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/hieu_thuoc" />
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/Info"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
     </LinearLayout>
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Info"
-        android:textSize="30dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
-        android:textColor="@color/purple_700"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="87dp" />
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/username"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="87dp" />
 
-    <EditText
-        android:id="@+id/edtUsername"
-        android:inputType="none"
-        android:textIsSelectable="true"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_weight="1">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-        />
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/email"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="87dp" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username" />
 
-    <EditText
-        android:id="@+id/edtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        />
+            <EditText
+                android:id="@+id/edtUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:layout_marginBottom="20dp"/>
 
-        android:text="@string/password" />
-
-
-
-    <EditText
-        android:id="@+id/edtPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword" />
-    <Button
-        android:id="@+id/btnSaveInfoAccount"
-        android:onClick="handleSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/save"
-         />
-
+            <Button
+                android:id="@+id/btnSaveInfoAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="handleSave"
+                android:text="@string/save" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
