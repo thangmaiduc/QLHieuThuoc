@@ -48,4 +48,9 @@ public class ThuocModel {
     public void setDonGia(Double donGia) {
         this.donGia = donGia;
     }
+
+    @Override
+    public String toString() {
+        return this.maThuoc+"\t\t"+this.tenThuoc+"\n"+this.DVT+"\n"+this.donGia;
+    }
 }

@@ -48,7 +48,7 @@ public class ThemHieuThuoc extends AppCompatActivity {
     }
 
     public void handBack(View view) {
-        Intent intent = new Intent(this, HieuThuoc.class);
+        Intent intent = new Intent(this, activity_thuoc.class);
         startActivity(intent);
     }
 
