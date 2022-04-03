@@ -2,7 +2,9 @@ package com.nhom20.qlhieuthuoc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -45,14 +47,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void goToLogin(View view) {
-        Intent intent = new Intent(this,Login.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
-        startActivity(intent);
-        this.finish();
-    }
-
-    private void signUp() {
-        Intent intent = new Intent(this,Menu.class);
+        Intent intent = new Intent(this, Login.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
         startActivity(intent);
         this.finish();
@@ -80,10 +75,17 @@ public class SignUpActivity extends AppCompatActivity {
             if (cursor.moveToNext()) {
                 Toast.makeText(this, "Username đã tồn tại!", Toast.LENGTH_SHORT).show();
             } else {
-                database.execSQL("INSERT INTO USER (USERNAME, EMAIL, PASSWORD ) VALUES (?,?,?)",
-                        new String[]{username, email, password});
-                Toast.makeText(this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
-                signUp();
+                ContentValues cv = new ContentValues();
+                cv.put("USERNAME", username);
+                cv.put("EMAIL", email);
+                cv.put("PASSWORD", password);
+                database.insert("USER", null, cv);
+                Toast.makeText(this, "Đăng ký thành công, hãy đăng nhập để tiếp tục sử dụng!", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(this, Login.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
+                startActivity(intent);
+                this.finish();
             }
             cursor.close();
         }
