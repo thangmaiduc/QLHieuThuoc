@@ -35,7 +35,7 @@ public class Menu extends AppCompatActivity {
     }
 
     public void chuyenThuoc(View view) {
-        Intent intent = new Intent(Menu.this, Thuoc.class);
+        Intent intent = new Intent(Menu.this, activity_thuoc.class);
         startActivity(intent);
     }
     public void chuyenHoaDon(View view) {
