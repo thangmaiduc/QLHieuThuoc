@@ -4,17 +4,17 @@ public class ThuocModel {
     private Integer maThuoc;
     private String tenThuoc;
     private String DVT;
-    private Double DONGIA;
+    private Double donGia;
 
     public ThuocModel() {
 
     }
 
-    public ThuocModel(Integer maThuoc, String tenThuoc, String DVT, Double DONGIA) {
+    public ThuocModel(Integer maThuoc, String tenThuoc, String DVT, Double donGia) {
         this.maThuoc = maThuoc;
         this.tenThuoc = tenThuoc;
         this.DVT = DVT;
-        this.DONGIA = DONGIA;
+        this.donGia = donGia;
     }
 
     public Integer getMaThuoc() {
@@ -41,11 +41,16 @@ public class ThuocModel {
         this.DVT = DVT;
     }
 
-    public Double getDONGIA() {
-        return DONGIA;
+    public Double getDonGia() {
+        return donGia;
     }
 
-    public void setDONGIA(Double DONGIA) {
-        this.DONGIA = DONGIA;
+    public void setDonGia(Double donGia) {
+        this.donGia = donGia;
+    }
+
+    @Override
+    public String toString() {
+        return this.maThuoc+"\t\t"+this.tenThuoc+"\n"+this.DVT+"\n"+this.donGia;
     }
 }

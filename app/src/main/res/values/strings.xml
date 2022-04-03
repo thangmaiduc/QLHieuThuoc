@@ -25,4 +25,7 @@
     <string name="thuoc">Quản Lý Thuốc</string>
     <string name="hieuthuoc">Quản Lý Hiệu Thuốc</string>
     <string name="nologin">Nếu bạn chưa có tài khoản</string>
+    <string name="tenThuoc">Tên thuốc</string>
+    <string name="dvt">Đơn vị tính</string>
+    <string name="donGia">Đơn giá</string>
 </resources>

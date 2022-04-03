@@ -10,11 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QLHieuThuoc">
         <activity
+            android:name=".activity_thuoc"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ThemNhaThuoc"
-            android:exported="false" />
+            android:exported="false" >
+        </activity>
         <activity
             android:name=".ThemHieuThuoc"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".TaiKhoan"
             android:exported="false" />
