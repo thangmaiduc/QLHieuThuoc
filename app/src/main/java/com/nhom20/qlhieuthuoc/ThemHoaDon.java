@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,10 +21,12 @@ import java.util.HashMap;
 import java.util.Random;
 
 import model.HoaDonModel;
+
 import model.ThuocModel;
 
 public class ThemHoaDon extends AppCompatActivity {
     Spinner spThuoc;
+
     Button addThuoc,saveThuoc;
     EditText editTextNumber;
     ListView lvHoaDon;
@@ -56,7 +59,6 @@ public class ThemHoaDon extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
     }

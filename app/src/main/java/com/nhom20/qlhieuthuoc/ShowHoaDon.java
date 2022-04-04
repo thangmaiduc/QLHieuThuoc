@@ -51,7 +51,6 @@ public class ShowHoaDon extends AppCompatActivity {
         Login.database= openOrCreateDatabase(Login.DATABASE_NAME, MODE_PRIVATE, null);
         Cursor cursor = Login.database.rawQuery("select HD.NGAYHD,NHATHUOC.TENNT FROM HOADON as HD INNER JOIN NHATHUOC ON (HD.SOHD = MaHD and HD.MANT = NHATHUOC.MANT )",null);
         Toast.makeText(ShowHoaDon.this,cursor.getString(0),Toast.LENGTH_SHORT).show();
-
         if (cursor.moveToNext()) {
             textViewHD.setText(textViewHD.getText().toString() + MaHD);
             textViewHD1.setText(textViewHD1.getText().toString() + cursor.getString(0));
