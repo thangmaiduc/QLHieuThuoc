@@ -29,6 +29,14 @@
             android:layout_marginBottom="20dp"
             android:src="@drawable/hieu_thuoc" />
 
+        <Button
+            android:id="@+id/saveThuoc"
+            android:onClick="saveHoaDon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Save" />
+
     </LinearLayout>
     <TextView
         android:id="@+id/textView4"
@@ -70,6 +78,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Thêm Thuốc" />
-
-
+    <ListView
+        android:id="@+id/lvHoaDon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
