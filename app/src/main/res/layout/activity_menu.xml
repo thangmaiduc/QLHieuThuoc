@@ -36,15 +36,9 @@
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-<<<<<<< HEAD
-        android:text="@string/hieuthuoc"
-         />
-=======
         android:onClick="chuyenHieuThuoc"
         android:text="@string/hieuthuoc" />
-
->>>>>>> 088b06b3764006d26e5bf814c28f2bddb3140ced
-    <Button
+  <Button
         android:id="@+id/btnTaiKhoan"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
