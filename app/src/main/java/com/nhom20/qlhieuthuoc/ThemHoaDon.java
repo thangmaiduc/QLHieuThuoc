@@ -35,11 +35,18 @@ public class ThemHoaDon extends AppCompatActivity {
         hienThiThuoc();
         ArrayAdapter stapter  = new ArrayAdapter(this, android.R.layout.simple_list_item_1,dataThuoc);
         spThuoc.setAdapter(stapter);
-        spThuoc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        spThuoc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(ThemHoaDon.this,"Bạn Chọn" + dataThuoc.get(i),Toast.LENGTH_SHORT).show();
-                maThuoc = (String) map.get(dataThuoc.get(i));
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(ThemHoaDon.this,"Bạn Chọn" + dataThuoc.get(position),Toast.LENGTH_SHORT).show();
+                maThuoc = String.valueOf(map.get(dataThuoc.get(position)));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
     }
@@ -60,7 +67,7 @@ public class ThemHoaDon extends AppCompatActivity {
         cursor.close();
     }
     private  void addControll(){
-        spThuoc = (Spinner) findViewById(R.id.spThuoc);
+        spThuoc = findViewById(R.id.spThuoc);
         addThuoc = (Button) findViewById(R.id.addThuoc);
         editTextNumber = (EditText) findViewById(R.id.editTextNumber);
     }

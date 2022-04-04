@@ -41,12 +41,19 @@ public class HoaDon extends AppCompatActivity {
     private void setControll(){
         KhoiTao();
         ArrayAdapter stapter  = new ArrayAdapter(this, android.R.layout.simple_list_item_1,data);
+        stapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         chiNhanh.setAdapter(stapter);
-        chiNhanh.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        chiNhanh.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(HoaDon.this,"Bạn Chọn" + data.get(i),Toast.LENGTH_SHORT).show();
-                maChiNhanh = (String) map.get(data.get(i));
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(HoaDon.this,"Bạn Chọn " + data.get(position),Toast.LENGTH_SHORT).show();
+                maChiNhanh = String.valueOf(map.get(data.get(position)));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
