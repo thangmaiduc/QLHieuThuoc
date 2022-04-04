@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import android.os.Bundle;
@@ -17,7 +18,7 @@ import android.os.Bundle;
 public class ThemHieuThuoc extends AppCompatActivity {
     EditText edtTenThuoc, edtDVT, edtDonGia;
     Button btnAdd, btnSave, btnContinue;
-
+    ListView lvHoaDon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class ThemHieuThuoc extends AppCompatActivity {
         btnAdd = (Button) findViewById(R.id.btnAdd);
         btnSave = (Button) findViewById(R.id.btnSave);
         btnContinue = (Button) findViewById(R.id.btnContinue);
+        lvHoaDon = (ListView) findViewById(R.id.lvHoaDon);
         Intent intent = getIntent();
         String type = intent.getStringExtra("type");
         if(type.equalsIgnoreCase("sua")){
