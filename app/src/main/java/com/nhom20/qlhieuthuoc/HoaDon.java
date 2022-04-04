@@ -25,6 +25,7 @@ public class HoaDon extends AppCompatActivity {
     Spinner chiNhanh;
     EditText maHoaDon;
     ArrayList<String> data = new ArrayList<>();
+    ArrayList<String> data1 = new ArrayList<>();
     HashMap map = new HashMap();
     String maChiNhanh = "";
     @Override
@@ -44,9 +45,14 @@ public class HoaDon extends AppCompatActivity {
         chiNhanh.setAdapter(stapter);
         chiNhanh.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(HoaDon.this,"Bạn Chọn" + data.get(i),Toast.LENGTH_SHORT).show();
-                maChiNhanh = (String) map.get(data.get(i));
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(HoaDon.this,"Bạn Chọn " + data.get(position),Toast.LENGTH_SHORT).show();
+                maChiNhanh = String.valueOf(map.get(data1.get(position)));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
@@ -60,7 +66,9 @@ public class HoaDon extends AppCompatActivity {
         while(cursor.moveToNext()){
             Integer ma = cursor.getInt(0);
             String ten = cursor.getString(1);
-            data.add(ten);
+            String di = cursor.getString(2);
+            data.add(ten+" "+di);
+            data1.add(ten);
             map.put(ten,ma);
         }
     }
